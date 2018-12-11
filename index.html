@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Require JS Lesson</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link href="https://fonts.googleapis.com/css?family=Bungee|Lobster|Pacifico" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+</head>
+<body>
+    
+    <div id="rootApp" class="root-contianer">
+        <header id="header"></header>
+
+        <article class="main-container">
+            <sidebar id="sidebar"></sidebar>
+            <section id="mainSection"></section>
+        </article>
+
+        <footer id="footer"></footer>
+    </div>
+
+    <script data-main="js/config" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+
+    <script>
+        requirejs(['app'], function(){
+            console.log('init app js');
+        });
+    </script>
+</body>
+</html>
