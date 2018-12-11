@@ -37,16 +37,35 @@ h1{
 .main-container {
     overflow: hidden;
     background: #fafbde;
-    min-height: 250px;
 }
-#sidebar{
+
+#mainSection, #sidebar{
+    min-height: 350px;
+}
+
+#mainSection{
+    margin-left: 22%;
+    overflow: hidden;
+    background: #f5f4b9;
+    box-sizing: border-box;
+    padding: 40px;
+    border-width: 0 20px;
+    border-style: solid;
+    border-color: #ffe867;
+}
+
+#sidebar {
     width: 20%;
     float:left;
     background: #f5efb9;
-    padding: 20px;
+    padding: 20px 0;
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: #afa56d;
 }
 
-.nav-list{
+.nav-list, .nav-list li{
     list-style: none;
     padding: 0;
     margin: 0;
@@ -54,13 +73,16 @@ h1{
 
 .nav-list a{
     color: #000;
+    padding: 4px 4px 4px 20px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 2px dotted darkgoldenrod;
+}
+.nav-list .active{
+    background-color: #8a672a;
 }
 
-#mainSection{
-    margin-left: 25%;
-    overflow: hidden;
-    background:#f5f4b9;
-}
+.nav-list .active a{color: #fff;}
 
 #footer {
     min-height: 20px;

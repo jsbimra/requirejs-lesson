@@ -9,15 +9,21 @@ define(['service', 'welcome', 'sidebar', 'footer'], function (service, w, s, f) 
     sidebar.append(s);
 
     const mainSection = $('#mainSection');
-    const moduleDefualt = service.loadModule('home');
+    const moduleDefualt = service.loadModule({fileName: 'home', localPathFLag: true});
         moduleDefualt.then( (htmlres) => {
             mainSection.html(htmlres); 
         });
 
+    $('.nav-list li:first').addClass('active');
+
     sidebar.on('click', 'a', function(e) {
-        let text = $.trim($(this).text().replace(' ', '-'));
+        const $this = $(this);
+        $('.nav-list li').removeClass('active');
+        $this.parent().addClass('active');
+        let text = $.trim($this.text().replace(' ', '-')).toLowerCase();
         if(text !== '' ) {
-            const currentModuleLoad = service.loadModule(text.toLowerCase())
+            let paramData = text === 'about-us' ? {fileName: 'https://requirejs.org/index.html', localPathFLag: false} : {fileName: text, localPathFLag: true};
+            const currentModuleLoad = service.loadModule(paramData);
             currentModuleLoad
                 .then( htmlres => {
                     // console.log(htmlres);
@@ -27,7 +33,6 @@ define(['service', 'welcome', 'sidebar', 'footer'], function (service, w, s, f) 
                         console.error('Hey got error from app currentModule catch', err);
                     return new Error(`<2>Page not found</h2>`);
                 });
-                       
         }
     });
     const footer = $('#footer');
