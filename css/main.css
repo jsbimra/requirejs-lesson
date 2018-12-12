@@ -41,9 +41,14 @@ h1{
     border-style: dashed;
     border-color: #ffab67 #ffab67;
     padding: 10px;
-
 }
 
+.main-container h1{
+    color: #000;
+    border-width:  0 0 1px;
+    border-style: solid;
+    border-color: #afa56d;
+}
 #mainSection, #sidebar{
     min-height: 350px;
 }
