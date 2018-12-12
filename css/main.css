@@ -29,7 +29,7 @@ header{
 
 h1{
     font-family: 'Pacifico', cursive;  
-    margin:20px;
+    margin: 20px 0 0;
     color: #000;
     vertical-align: middle;
 }
@@ -37,6 +37,11 @@ h1{
 .main-container {
     overflow: hidden;
     background: #fafbde;
+    border-width:  0 2px;
+    border-style: dashed;
+    border-color: #ffab67 #ffab67;
+    padding: 10px;
+
 }
 
 #mainSection, #sidebar{
@@ -44,21 +49,18 @@ h1{
 }
 
 #mainSection{
-    margin-left: 22%;
+    /* margin-left: 22%; */
     overflow: hidden;
     background: #f5f4b9;
     box-sizing: border-box;
-    padding: 40px;
-    border-width: 0 8px;
-    border-style: dashed;
-    border-color: #ffe867;
+    padding: 0 40px;
 }
 
 #sidebar {
     width: 20%;
     float:left;
-    background: #f5efb9;
-    padding: 20px 0;
+    /* background: #f5efb9; */
+    padding: 0;
     box-sizing: border-box;
     border-width: 0;
     border-style: solid;
@@ -79,10 +81,10 @@ h1{
     border-bottom: 2px dotted darkgoldenrod;
 }
 .nav-list .active{
-    background-color: #8a672a;
+    background-color: #ffe867;
 }
 
-.nav-list .active a{color: #fff;}
+.nav-list .active a{color: #000;}
 
 #footer {
     min-height: 20px;
